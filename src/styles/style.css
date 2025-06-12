@@ -54,27 +54,28 @@ html, body {
 }
 
 .chat-message {
-  margin-bottom: 10px;
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-radius: 12px;
-  max-width: 70%;
+  max-width: 75%;
+  word-wrap: break-word;
 }
 
 .chat-message.agent {
-  background-color: #e1f0ff;
   align-self: flex-start;
+  background-color: #e1f0ff;
 }
 
 .chat-message.customer {
-  background-color: #d4f8d4;
   align-self: flex-end;
+  background-color: #d4f8d4;
 }
 
 .chat-message.admin {
-  background-color: #ffe8b2;
   align-self: center;
+  background-color: #ffe8b2;
 }
 
-.chat-header img {
-  object-fit: cover;
+.backdrop-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
