@@ -60,19 +60,6 @@ Then open: `http://localhost:3000` (port may vary)
 
 ---
 
-## ⚙️ Environment Switching (Dev vs Prod)
-
-In `main.js`, the app uses the environment flag to determine which data source to load:
-
-```js
-const ENV = 'dev'; // Change to 'prod' for remote URL
-```
-
-- `dev`: loads from `src/data/data.json` (local file)
-- `prod`: loads from remote API endpoint (uncomment the fetch line)
-
----
-
 ## 📄 Sample Chat Message Format (JSON)
 
 ```json
@@ -88,17 +75,9 @@ Supports types: `text`, `image`, `video`, `pdf`, `youtube`.
 
 ---
 
-## 📌 Notes
-
-- Use **CORS-safe** endpoints for production API.
-- YouTube videos only display a thumbnail and open in a new tab due to embedding restrictions.
-- Customize sender IDs and roles in `getRoleClass.js` / `getRoleName.js`.
-
----
-
 ## 🧑‍💻 Author
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by Khairunas Rhamadhani Wiasanto
 
 ---
 
