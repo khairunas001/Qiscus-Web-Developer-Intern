@@ -1,37 +1,21 @@
-// import { renderChat } from '../data/data.json';
-
-// document.addEventListener('DOMContentLoaded', async () => {
-//   const container = document.getElementById('chat-container');
-
-//   try {
-//     const response = await fetch('src/data/data.json');
-//     const jsonData = await response.json();
-
-//     jsonData.results.forEach(result => {
-//       renderChat(container, result);
-//     });
-//   } catch (error) {
-//     console.error('Failed to load data.json:', error);
-//   }
-// });
-
-// import { data } from '../data/data.js';
-// import { renderChat } from './render.js';
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   const container = document.getElementById('chat-container');
-//   data.results.forEach(result => {
-//     renderChat(container, result);
-//   });
-// });
-
-import { data } from '../data/data.js';
-import { renderChat } from './render.js';
+import { renderChat } from '../script/render/renderChat.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('chat-container');
-  data.results.forEach(result => {
-    renderChat(container, result);
-  });
+
+  // if use fatch data from endpoint
+  // fetch('https://gist.githubusercontent.com/asharijuang/23745f3132fa30e666db68d2bf574e4a/raw/5d556dbb9c2aea9fdf3e1ec96e45f62a88cea7b6/chat_response.json')
+
+  // for development extend json
+  fetch('src/data/data.json')
+    .then(response => response.json())
+    .then(data => {
+      data.results.forEach(result => {
+        renderChat(container, result);
+      });
+    })
+    .catch(error => {
+      console.error('Failed to load JSON data:', error);
+    });
 });
 
